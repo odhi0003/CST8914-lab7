@@ -6,192 +6,193 @@
   <title>The funion</title>
   <style>
     *,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
+    html {
+      position: relative;
+      min-height: 100%;
+    }
 
-body {
-  margin: 30px; /* bottom = newsletter height */
-  font-family: Lato, sans-serif;
-}
+    body {
+      margin: 30px; /* bottom = newsletter height */
+      font-family: Lato, sans-serif;
+    }
 
-a{
-  color: #006b3a;
-}
-main a{
-  outline: none;
-}
-h2 {
-  margin-top: 0;
-}
+    a{
+      color: #006b3a;
+    }
+    /* Comment out or remove outline none to give focus on links when using keyboard navigation */
+    /* main a{
+      outline: none;
+    } */
+    h2 {
+      margin-top: 0;
+    }
 
-article h3 {
-  margin-top: 0;
-  font-size: 1.5em;
-  -webkit-margin-after: 0.83em;
-}
+    article h3 {
+      margin-top: 0;
+      font-size: 1.5em;
+      -webkit-margin-after: 0.83em;
+    }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
 
-header {
-  margin-bottom: 48px;
-  box-shadow: 0 0 8px #bbb;
-  border-bottom: 1px solid #aaa;
-}
+    header {
+      margin-bottom: 48px;
+      box-shadow: 0 0 8px #bbb;
+      border-bottom: 1px solid #aaa;
+    }
 
-.logo {
-  text-align: center;
-  font-size: 32px;
-  margin: 0;
-  padding: 16px 0;
-  border-bottom: 1px solid #ddd;
-}
+    .logo {
+      text-align: center;
+      font-size: 32px;
+      margin: 0;
+      padding: 16px 0;
+      border-bottom: 1px solid #ddd;
+    }
 
-.offscreen {
-  position: absolute;
-  left: -10000px;
-  top: -10000px;
-}
+    .offscreen {
+      position: absolute;
+      left: -10000px;
+      top: -10000px;
+    }
 
-.menu {
-  padding: 16px 48px;
-}
+    .menu {
+      padding: 16px 48px;
+    }
 
-.menu a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  margin-right: 18px;
-}
+    .menu a {
+      color: #000;
+      text-decoration: none;
+      font-size: 18px;
+      margin-right: 18px;
+    }
 
-.menu a:last-child {
-  margin-right: 0;
-}
+    .menu a:last-child {
+      margin-right: 0;
+    }
 
-.menu .btn-search img {
-  vertical-align: top;
-  margin-right: 8px;
-  width: 22px;
-  height: 22px;
-}
+    .menu .btn-search img {
+      vertical-align: top;
+      margin-right: 8px;
+      width: 22px;
+      height: 22px;
+    }
 
-article p {
-  line-height: 1.4;
-}
+    article p {
+      line-height: 1.4;
+    }
 
-.main-story {
-  clear: both;
-  overflow: hidden;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
-}
+    .main-story {
+      clear: both;
+      overflow: hidden;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+    }
 
-.main-story img {
-  width: 50%;
-}
+    .main-story img {
+      width: 50%;
+    }
 
-.main-story .info {
-  margin-right: 50%;
-  padding-right: 16px;
-}
+    .main-story .info {
+      margin-right: 50%;
+      padding-right: 16px;
+    }
 
-.tier-header {
-  border-top: 1px solid #aaa;
-  margin-bottom: 15px;
-}
+    .tier-header {
+      border-top: 1px solid #aaa;
+      margin-bottom: 15px;
+    }
 
-.tier-header h2 {
-  font-size: 17px;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding: 5px 15px;
-  display: inline-block;
-  margin: 0;
-  color: #fff;
-  background: #006b3a;
-}
+    .tier-header h2 {
+      font-size: 17px;
+      font-weight: 400;
+      text-transform: uppercase;
+      padding: 5px 15px;
+      display: inline-block;
+      margin: 0;
+      color: #fff;
+      background: #006b3a;
+    }
 
-.side-by-side .column {
-  display: inline-block;
-  vertical-align: top;
-}
+    .side-by-side .column {
+      display: inline-block;
+      vertical-align: top;
+    }
 
-.side-by-side article img {
-  max-width: 100%;
-}
+    .side-by-side article img {
+      max-width: 100%;
+    }
 
-.side-by-side .column:first-child {
-  width: 70%;
-  padding-right: 16px;
-  border-right: 1px solid #aaa;
-}
+    .side-by-side .column:first-child {
+      width: 70%;
+      padding-right: 16px;
+      border-right: 1px solid #aaa;
+    }
 
-.side-by-side .column:last-child {
-  padding-left: 16px;
-  width: 29%; /* Account for whitespace gap from display: inline-block */
-}
+    .side-by-side .column:last-child {
+      padding-left: 16px;
+      width: 29%; /* Account for whitespace gap from display: inline-block */
+    }
 
-.side-by-side .column:last-child .headline {
-  font-size: 18px;
-}
+    .side-by-side .column:last-child .headline {
+      font-size: 18px;
+    }
 
-.three-col {
-  margin-bottom: 100px;
-}
+    .three-col {
+      margin-bottom: 100px;
+    }
 
-.three-col h2,
-.three-col h3 {
-  margin-top: 0;
-  font-size: 16px;
-}
+    .three-col h2,
+    .three-col h3 {
+      margin-top: 0;
+      font-size: 16px;
+    }
 
-.three-col .columns {
-  display: flex;
-}
+    .three-col .columns {
+      display: flex;
+    }
 
-.three-col .columns article {
-  flex: 1;
-  margin-right: 18px;
-}
+    .three-col .columns article {
+      flex: 1;
+      margin-right: 18px;
+    }
 
-.three-col img {
-  width: 100%;
-}
+    .three-col img {
+      width: 100%;
+    }
 
-.three-col .columns article:last-child {
-  margin-right: 0;
-}
+    .three-col .columns article:last-child {
+      margin-right: 0;
+    }
 
-.newsletter {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
-  background: #000;
-  color: #fff;
-  border-top: 1px solid #aaa;
-}
+    .newsletter {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 60px;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      border-top: 1px solid #aaa;
+    }
 
-.newsletter h3 {
-  display: inline-block;
-  margin-right: 16px;
-}
+    .newsletter h3 {
+      display: inline-block;
+      margin-right: 16px;
+    }
 
-/* Helpers */
-.pull-right {
-  float: right;
-}
+    /* Helpers */
+    .pull-right {
+      float: right;
+    }
 
   </style>
 </head>
@@ -206,7 +207,8 @@ article p {
       <nav class="menu">
         <a href="#">Home</a>
         <a href="#">Politics</a>
-        <a href="#" tabindex="-1">Business</a>
+        <!-- Remove tabindex="-1" from business link in order to allow keyboard accessibility -->
+        <a href="#">Business</a>
         <a href="#">Entertainment</a>
         <a href="#">Sports</a>
         <a href="#" class="btn-search pull-right"><img src="https://raw.githubusercontent.com/udacity/ud891/2de2a0688c68809a3b453db3a24b1a59e8401459/lesson2-focus/02-dom-order/images/search.svg" alt="Search" />Search</a> 
@@ -214,14 +216,7 @@ article p {
       </nav>
     </div>
   </header>
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button></div>
-      
-    </div>
-  </div>
+  <!-- Remove sign up and move to the fooder to improve keyboard navigation order -->
   <main class="container">
     <h2 class="offscreen">Top story</h2>
     <article class="main-story">
@@ -243,7 +238,8 @@ article p {
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
-          <p><a href="#" tabindex="1"><b>Read More</b></a></p>
+          <!-- Remove tabindex="1"in order to improve the order while using keyboard navigation -->
+          <p><a href="#"><b>Read More</b></a></p>
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
         </article>
       </div>
@@ -286,10 +282,21 @@ article p {
     </div>
     
   </main>
-  <!--   stuff can be added here :)
+    <!-- stuff can be added here :) -->
   <footer>
+    <!-- Moved signup to the footer to improve order of alignment when using keyboard -->
+    <div class="newsletter">
+      <div class="container">
+        <h3>Like the Funion? Consider joining our newsletter!</h3>
+        <input type="text">
+        <!-- Changed event from onfocus to onclick to prevent the button from opening
+         new page while using keyboard tab navigation -->
+        <button type="button" onclick="getFocus()">Sign up</button></div>
+        
+      </div>
+    </div>
   </footer>
-  -->
+ 
   
   <script>
     function getFocus() {
