@@ -101,7 +101,9 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset class="errors"><legend>Errors</legend><ul></ul></fieldset>');
+              // add role='alert' to ensure error notification is accessible to keyboard and screen reader users
+              // add tabindex = "-1" to ensure that the focus moves to the errors area
+              $('form').prepend('<fieldset class="errors" tabindex="-1" role="alert"><legend>Errors</legend><ul></ul></fieldset>');
             }
       
             $referencedElement = null;
@@ -117,7 +119,8 @@
               $referencedElement = $input;
             }
       // R.G. hint: fix next line ;)
-            $error = $('<a>' + message + '</a>');
+      // add href to link the error message to the input field that has an error
+            $error = $('<a href="#' + $referencedElement.attr('id') + '">' + message + '</a>');
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
               $referencedElement.focus();
@@ -127,6 +130,8 @@
             $errorContainer.append('<li>').find('li:last').append($error);
       
             if ($(':not(form):focus').length === 0) {
+              // add $('fieldset.errors').focus() to ensure that the keyboard focus moves to the errors area
+              $('fieldset.errors').focus();
               // See https://stackoverflow.com/questions/46134247/jquery-setting-focus-doesnt-work-in-ie11/
             
             }
@@ -150,7 +155,8 @@
             validateInput('gender', 'Please tell us your gender!');
             validateInput('accept_agbs', 'You must accept our terms and conditions!');
       
-            if ($('.error').length === 0) {
+            // Replace ".error" with "fieldset.errors" to search for class errors in the specific fieldset for validation
+            if ($('fieldset.errors').length === 0) {
               return alert('All inputs are valid.');
             }
           }
