@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Form validation with messages on top: Code example - Accessibility Developer Guide example</title>
-        <meta charset="utf-8">
-        <style>.control, fieldset {
-      margin: 6px 0;
-    }
-    
-    label {
-      display: inline-block;
-      width: 120px;
-      vertical-align: top;
-    }
-    
-    input + label {
-      width: auto;
-    }
-    
-    .error, .required {
-      color: red;
-    }
-    
-    fieldset ul {
-      margin: 0;
-    }</style>
+      <title>Form validation with messages on top: Code example - Accessibility Developer Guide example</title>
+      <meta charset="utf-8">
+      <style>
+        .control, fieldset {
+          margin: 6px 0;
+        }
+        
+        label {
+          display: inline-block;
+          width: 120px;
+          vertical-align: top;
+        }
+        
+        input + label {
+          width: auto;
+        }
+        
+        .error, .required {
+          color: red;
+        }
+        
+        fieldset ul {
+          margin: 0;
+        }
+      </style>
     </head>
     <body>
         <h1>Feedback form</h1>
     <form>
+      <!-- Explain required fields before the form -->
+      <p>Fields marked “required” must be completed.</p>
+
+      <div class="control">
+        <!-- Associate full name label to input field using 'for' attribute, assigning a value similar to the full name input id, and mark as required -->
+        <label for="name">Full name (required)</label>
+        <input id="name" name="name" type="text" />
+      </div>
+
+      <div class="control">
+        <!-- Associate biography label to input field using for attribute, assigning a value similar to the biography input id -->
+        <label for="biography">Biography</label>
+        <!-- Add aria describedby to connect the biography textarea to extra information -->
+        <textarea id="biography" name="biography" aria-describedby="biography-info"></textarea>
+        <span id="biography-info">Include examples on your skills in JavaScript.</span>
+      </div>
+      
+      <!-- Group gender inputs, 'male' and 'female' using 'fieldset' since they belong to the same group 'gender'  -->
+      <fieldset>
+        <!-- Add legend to give a title to the fieldset -->
+        <legend>Gender</legend>
+
         <div class="control">
-          <label>Full name <span class="required">*</span></label><input id="name" name="name" type="text" />
+          <label>
+            <input id="gender_male" name="gender" type="radio" value="male" />
+            Male
+          </label>
         </div>
+
         <div class="control">
-          <label>Biography</label><textarea id="biography" name="biography" type="text"></textarea>
-          <span>Include examples on your skills in JavaScript.</span>
+          <label>
+            <input id="gender_female" name="gender" type="radio" value="female" />
+            Female
+          </label>
         </div>
-        
-          <div>Gender</div>
-          <div class="control">
-            <input id="gender_male" name="gender" type="radio" value="male" /><label>Male</label>
-          </div>
-          <div class="control">
-            <input id="gender_female" name="gender" type="radio" value="female" /><label>Female</label>
-          </div>
-        
-        <div class="control">
-          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label>I accept the terms and conditions</label>
-        </div>
-        <div class="control">
-          <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
-        </div>
+      </fieldset>
+      
+      <div class="control">
+        <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" />
+        <label for="accept_agbs">I accept the terms and conditions (required)</label>
+      </div>
+      
+      <div class="control">
+        <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
+      </div>
       </form>
       
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
